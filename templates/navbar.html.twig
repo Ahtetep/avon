@@ -1,0 +1,29 @@
+<nav class="navbar fixed-top navbar-expand-lg bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Avon club</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 mr-auto justify-content-end">
+                <li class="nav-item {{ (current == 'homepage') ? 'active"' : '' }}">
+                    <a class="nav-link" href="{{ path('homepage') }}">Головна</a>
+                </li>
+                <li class="nav-item {{ (current == 'catalog') ? 'active"' : '' }}">
+                    <a class="nav-link" href="#">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLScN6TtN7iyWxs9_t1IKKT02wPAdV7cqcvc-leopYrTXhbTcMQ/viewform" target="_blank">Отримати дисконт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://service.avon.ua/ref/ab88b15733" target="_blank">Стати представником</a>
+                </li>
+                <li class="nav-item {{ (current == 'contact') ? 'active"' : '' }}">
+                    <a class="nav-link" href="#">Контакти</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>

@@ -1,0 +1,69 @@
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-item {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+
+
+}
+
+.carousel-caption {
+    width: 60%;
+    height: min-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    font-size: 42pt;
+    width: max-content;
+    margin: auto;
+    border-bottom: 3px solid #ED008C;
+}
+
+.carousel-caption p {
+    font-size: 30pt;
+}
+
+.btn-style1 {
+    font-size: 15pt;
+    color: white;
+    background: #ED008C;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.btn-style1:hover {
+    color: white;
+    background: #EF1D99;
+}
+
+.nav-item a {
+    color: white;
+}
+
+.nav-item:hover a, .nav-item.active a, .navbar-brand {
+    color: #ED008C;
+    font-weight: 500;
+}
