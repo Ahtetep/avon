@@ -1,3 +1,36 @@
+/* Base style */
+
+.btn-style1 {
+    font-size: 15pt;
+    color: white;
+    background: #ED008C;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.btn-style1:hover {
+    color: white;
+    background: #EF1D99;
+}
+
+/* Nav */
+
+.nav-item a {
+    color: white;
+}
+
+.nav-item:hover a, .nav-item.active a, .nav-item.active:hover a, .navbar-brand {
+    color: #ED008C;
+    font-weight: 500;
+}
+
+.nav-item:hover a {
+    font-weight: normal;
+}
+
+/* Home carousel */
+
 .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -45,25 +78,23 @@
     font-size: 30pt;
 }
 
-.btn-style1 {
-    font-size: 15pt;
-    color: white;
-    background: #ED008C;
-    text-transform: uppercase;
-    border-radius: 30px;
-    padding: 10px 20px;
+.carousel-control-prev, .carousel-control-next {
+    opacity: 0;
+    transition: .3s linear;
 }
 
-.btn-style1:hover {
-    color: white;
-    background: #EF1D99;
+
+#homeCarousel:hover .carousel-control-prev,
+#homeCarousel:hover .carousel-control-next {
+    opacity: 1;
+    font-size: 30px;
+    transition: .3s linear;
 }
 
-.nav-item a {
-    color: white;
+#homeCarousel:hover .carousel-control-prev {
+    padding-left: 50px;
 }
 
-.nav-item:hover a, .nav-item.active a, .navbar-brand {
-    color: #ED008C;
-    font-weight: 500;
+#homeCarousel:hover .carousel-control-next {
+    padding-right: 50px;
 }
