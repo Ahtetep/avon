@@ -15,6 +15,7 @@ GuestBook
 - symfony composer require twig/intl-extra      Установка фильтра format_datetime
 - symfony composer req string                   Symfony компонента String
 - composer require vich/uploader-bundle         Загрузка файлов в админ
+- symfony composer req security                 Защита админ панели
 
 
 Инициализация проекта:
@@ -34,6 +35,7 @@ symfony composer req twig &&
 symfony composer require twig/intl-extra &&
 symfony composer req string &&
 composer require vich/uploader-bundle &&
+symfony composer req security &&
 
 
 ### Описание некоторых команд ###
@@ -81,7 +83,11 @@ composer require vich/uploader-bundle &&
     
         php bin/console doctrine:database:create
 
-    symfony console make:migration && symfony console doctrine:migrations:migrate   
+    php bin/console make:migration && 
+    php bin/console doctrine:migrations:migrate   
+
+    symfony console make:migration && 
+    symfony console doctrine:migrations:migrate   
 
 * Ошибка EasyAdmin 
     *  Если не работает - проверить версию. С версией 2.3.4 работает      
@@ -92,6 +98,21 @@ composer require vich/uploader-bundle &&
 * Генерация формы
     * ***symfony console make:form CommentFormType Comment***    
     * ***symfony console make:form RequirementFormType Requirement***    
+
+* Создание сущности Админа
+    * symfony console make:user Admin
+
+* Создание хеша пароля
+    * symfony console security:encode-password
+    * symfony run psql -c "INSERT INTO admin (id, username, roles, password) VALUES (nextval('admin_id_seq'), 'admin', '[\"ROLE_ADMIN\"]'), '\$argon2id\$v=19\$m=65536,t=4,p=1\$TEdJQmRZR0UwZTk0MFlZbA\$9+RTIC2ie8dsxtjmuOqY4b43ZO+pm2SnaTlVSMWqMmA'"
+
+* Создание формы входа
+    * symfony console make:auth
+    
+* Полноценная форма регистрации
+    * symfony console make:registration-form    
+
+
 
 
 -------------------------------------------------------------------------

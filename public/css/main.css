@@ -16,16 +16,21 @@
 
 /* Nav */
 
-.nav-item a {
+.navbar-dark .navbar-nav > .nav-link {
     color: white;
 }
 
-.nav-item:hover a, .nav-item.active a, .nav-item.active:hover a, .navbar-brand {
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-item.active:hover > .nav-link,
+.navbar-dark .navbar-nav .nav-item:hover > .nav-link,
+/*.nav-item:hover a, */
+/*.nav-item.active a, */
+.navbar-dark .navbar-brand {
     color: #ED008C;
     font-weight: 500;
 }
 
-.nav-item:hover a {
+.navbar-dark .navbar-nav .nav-item:hover > .nav-link {
     font-weight: normal;
 }
 

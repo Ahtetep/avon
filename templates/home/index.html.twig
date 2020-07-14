@@ -3,6 +3,7 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+    {% include 'navbar.html.twig' %}
     {% if slider_items|length > 0 %}
         <div id="homeCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
