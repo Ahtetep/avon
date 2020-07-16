@@ -12,19 +12,24 @@
         "symfony/dotenv": "5.0.*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "5.0.*",
+        "symfony/google-mailer": "5.0.*",
+        "symfony/http-client": "5.0.*",
+        "symfony/mailer": "5.0.*",
         "symfony/monolog-bundle": "^3.5",
         "symfony/orm-pack": "^1.0",
         "symfony/security-bundle": "5.0.*",
         "symfony/string": "5.0.*",
         "symfony/twig-pack": "^1.0",
         "symfony/yaml": "5.0.*",
+        "symfonycasts/verify-email-bundle": "^1.0",
         "twig/intl-extra": "^3.0",
         "vich/uploader-bundle": "^1.14"
     },
     "require-dev": {
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.19",
-        "symfony/profiler-pack": "^1.0"
+        "symfony/profiler-pack": "^1.0",
+        "symfony/var-dumper": "5.0.*"
     },
     "config": {
         "preferred-install": {

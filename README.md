@@ -7,6 +7,7 @@ GuestBook
 - composer require symfony/apache-pack           Отладка
 - symfony composer req logger
 - symfony composer req debug --dev
+- symfony composer require --dev symfony/var-dumper
 - symfony composer req maker --dev              Генерация контроллеров
 - symfony composer req annotations              Аннотации
 - symfony composer req orm                      ORM
@@ -16,6 +17,9 @@ GuestBook
 - symfony composer req string                   Symfony компонента String
 - composer require vich/uploader-bundle         Загрузка файлов в админ
 - symfony composer req security                 Защита админ панели
+- symfony composer req http-client              HTTP-client
+- symfony composer req mailer                   Почтовик
+- symfony composer req symfonycasts/verify-email-bundle     
 
 
 Инициализация проекта:
@@ -36,6 +40,9 @@ symfony composer require twig/intl-extra &&
 symfony composer req string &&
 composer require vich/uploader-bundle &&
 symfony composer req security &&
+symfony composer req http-client &&
+symfony composer req mailer &&
+symfony composer req symfonycasts/verify-email-bundle &&
 
 
 ### Описание некоторых команд ###
@@ -104,13 +111,15 @@ symfony composer req security &&
 
 * Создание хеша пароля
     * symfony console security:encode-password
-    * symfony run psql -c "INSERT INTO admin (id, username, roles, password) VALUES (nextval('admin_id_seq'), 'admin', '[\"ROLE_ADMIN\"]'), '\$argon2id\$v=19\$m=65536,t=4,p=1\$TEdJQmRZR0UwZTk0MFlZbA\$9+RTIC2ie8dsxtjmuOqY4b43ZO+pm2SnaTlVSMWqMmA'"
+    * symfony run psql -c "INSERT INTO admin (id, email, roles, password) VALUES (nextval('admin_id_seq'), 'admin', '[\"ROLE_ADMIN\"]', '\$argon2id\$v=19\$m=65536,t=4,p=1\$TEdJQmRZR0UwZTk0MFlZbA\$9+RTIC2ie8dsxtjmuOqY4b43ZO+pm2SnaTlVSMWqMmA')"
 
 * Создание формы входа
     * symfony console make:auth
     
 * Полноценная форма регистрации
     * symfony console make:registration-form    
+    
+    
 
 
 
