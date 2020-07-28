@@ -35,7 +35,7 @@ easy_admin:
                     - buttonName
                     - buttonUrl
                     - isUsed
-                    - { property: 'background', type: 'image', 'base_path': "/uploads/slider/", label: 'Photo' }
+                    - { property: 'background', type: 'image', 'base_path': "uploads/slider", label: 'Photo' }
                 sort: [ 'createdAt', 'ASC' ]
             edit:
                 fields:

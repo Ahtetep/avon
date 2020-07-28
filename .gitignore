@@ -5,6 +5,9 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/public/uploads/
 /var/
 /vendor/
+/README.md
+/composer.lock
 ###< symfony/framework-bundle ###

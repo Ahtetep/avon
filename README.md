@@ -48,7 +48,7 @@ symfony composer req symfonycasts/verify-email-bundle &&
 ### Описание некоторых команд ###
 
 * Создание заготовки проекта
-    * ***symfony new --version=5.0-1 --book nameproject***
+    * ***symfony new --version=5.0-3 --book nameproject***
     
 * Запуск веб-сервер в фоновом режиме прямо из директории проекта
     * ***symfony server:start -d***
@@ -88,7 +88,7 @@ symfony composer req symfonycasts/verify-email-bundle &&
     * ***symfony console make:migration***      
     * ***symfony console doctrine:migrations:migrate***   
     
-        php bin/console doctrine:database:create
+        php bin/console doctrine:database:create &&
 
     php bin/console make:migration && 
     php bin/console doctrine:migrations:migrate   
@@ -112,6 +112,7 @@ symfony composer req symfonycasts/verify-email-bundle &&
 * Создание хеша пароля
     * symfony console security:encode-password
     * symfony run psql -c "INSERT INTO admin (id, email, roles, password) VALUES (nextval('admin_id_seq'), 'admin', '[\"ROLE_ADMIN\"]', '\$argon2id\$v=19\$m=65536,t=4,p=1\$TEdJQmRZR0UwZTk0MFlZbA\$9+RTIC2ie8dsxtjmuOqY4b43ZO+pm2SnaTlVSMWqMmA')"
+    * INSERT INTO user (email, roles, password, is_verified, user_name) VALUES ('admin@admin.com', '[\"ROLE_ADMIN\"]', '\$argon2id\$v=19\$m=65536,t=4,p=1\$dqEBk8kBF8GAYErxfpTiFg\$Szhr+Y6ctu2gzASA8jAUpa5LR5bqcEv67iNilI4AXo8', 0, 'admin')
 
 * Создание формы входа
     * symfony console make:auth
