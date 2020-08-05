@@ -3,19 +3,33 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+    <div class="wrapper">
+        <div id="formContent" class="fadeInDown">
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
 
-    <h1>Register</h1>
+            <h1>Register</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.userName) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.userName, {
+                type: 'text',
+                label: 'userName',
+                'attr': {'class': 'form-control fadeIn second', 'placeholder': 'userName'}
+            }) }}
+            {{ form_row(registrationForm.email, {
+                type: 'email',
+                label: 'Email',
+                'attr': {'class': 'form-control fadeIn second', 'placeholder': 'email'}
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                type: 'password',
+                label: 'Password',
+                'attr': {'class': 'form-control fadeIn third mb-15', 'placeholder': 'password'}
+            }) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <input type="submit" class="fadeIn fourth" value="Зарегистрироваться">
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 {% endblock %}

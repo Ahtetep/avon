@@ -70,7 +70,6 @@ $(function () {
 
     $(this).on('click', '.catalog', function(e){
         e.preventDefault();
-        console.log($(this).find('.catalog-title').data('pdf-src'));
         var pdfUrl = $(this).find('.catalog-title').data('pdf-src');
         $('#flipbook').remove();
         if (pdfUrl) {
@@ -86,9 +85,10 @@ $(function () {
             )
         }
 
-        // $('#flipbook').data('pdf-src', + pdfUrl);
-        // $('#flipbook').data('data-pdf-src', pdfUrl ?? '/images/question.png');
-
         $('#flipbook').ipages(options);
+    });
+
+    $(this).on('click', '.no-js-handle', function(e){
+        e.preventDefault();
     });
 })

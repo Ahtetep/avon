@@ -583,3 +583,15 @@ select:-webkit-autofill:focus {
     background-position: 100%;
     background-size: cover;
 }
+
+.wrapper form input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid;
+    text-align: center;
+}
+
+.wrapper form input[type='text'] {
+    background: none;
+}
