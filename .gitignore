@@ -22,3 +22,4 @@ uploads/*
 /README.md
 /composer.lock
 ###< symfony/framework-bundle ###
+.idea
