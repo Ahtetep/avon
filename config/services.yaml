@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     uploads_path: '/uploads/slider/'
+    catalog_path: '/uploads/catalog/'
     default_admin_email: ahtetep1987@gmail.com
 
 services:

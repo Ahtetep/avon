@@ -19,7 +19,8 @@ GuestBook
 - symfony composer req security                 Защита админ панели
 - symfony composer req http-client              HTTP-client
 - symfony composer req mailer                   Почтовик
-- symfony composer req symfonycasts/verify-email-bundle     
+- symfony composer req symfonycasts/verify-email-bundle    
+- symfony composer req form validator           Валидация форм 
 
 
 Инициализация проекта:
@@ -43,12 +44,14 @@ symfony composer req security &&
 symfony composer req http-client &&
 symfony composer req mailer &&
 symfony composer req symfonycasts/verify-email-bundle &&
+symfony composer req form validator &&
 
 
 ### Описание некоторых команд ###
 
 * Создание заготовки проекта
     * ***symfony new --version=5.0-3 --book nameproject***
+    * ***symfony new nameproject --version=5.0***
     
 * Запуск веб-сервер в фоновом режиме прямо из директории проекта
     * ***symfony server:start -d***
@@ -99,6 +102,12 @@ symfony composer req symfonycasts/verify-email-bundle &&
 * Ошибка EasyAdmin 
     *  Если не работает - проверить версию. С версией 2.3.4 работает      
     
+* Создаем юзера / User *
+    symfony console make:user &&
+    symfony console make:auth &&
+    symfony console make:registration-form
+
+    
 * Генерация подписчика
     * ***symfony console make:subscriber TwigEventSubscriber***    
     
@@ -131,3 +140,17 @@ symfony console make:controller MeController
 
 *   Просмотр переменного окружения
 symfony var:export
+
+-------------------------------------------------------------------------
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('_s.id')
+            ->from(Slider::class, '_s');
+        return $qb->getQuery()->getResult();
+        --------------------------------------------------------
+        $rsm = new ResultSetMapping();
+        $rsm->addEntityResult(Slider::class, 's');
+        $rsm->addFieldResult('s', 'id', 'id');
+        $query = $this->em->createNativeQuery('SELECT * FROM slider', $rsm);
+        $users = $query->getResult();
+
+-------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark  bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">Avon club</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -11,7 +11,10 @@
                     <a class="nav-link" href="{{ path('homepage') }}">Головна</a>
                 </li>
                 <li class="nav-item {{ (current == 'catalog') ? 'active"' : '' }}">
-                    <a class="nav-link" href="#">Каталог</a>
+                    <a class="nav-link" href="{{ path('catalog') }}">Каталог</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://my.avon.ua/vitrina/BouticheK/" target="_blank">Зробити замовлення</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLScN6TtN7iyWxs9_t1IKKT02wPAdV7cqcvc-leopYrTXhbTcMQ/viewform" target="_blank">Отримати дисконт</a>
@@ -22,11 +25,7 @@
                 <li class="nav-item {{ (current == 'contact') ? 'active"' : '' }}">
                     <a class="nav-link" href="#">Контакти</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://my.avon.ua/vitrina/BouticheK/" target="_blank">Зробити замовлення</a>
-                </li>
             </ul>
         </div>
     </div>
-
 </nav>

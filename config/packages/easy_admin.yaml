@@ -1,42 +1,48 @@
 easy_admin:
-    site_name: Symfony Test
+    site_name: Avon
 
     design:
         menu:
-            - { route: 'homepage', label: 'Back to the website', icon: 'home' }
-            - { entity: 'Slider', label: 'Slider', icon: 'map-marker' }
+            - { route: 'homepage', label: 'Повернутися до сайиу', icon: 'home' }
+            - { entity: 'Slider', label: 'Слайдер', icon: 'sliders' }
+            - { entity: 'Catalog', label: 'Каталог', icon: 'book' }
 
     entities:
         Slider:
             class: App\Entity\Slider
-#            fields:
-#                - {type: 'group', icon: 'pencil', label: 'Basic Information', css_class: 'col-lg-7'}
-#                - title
-#                - {property: 'content', type: 'text_editor'}
-#                - createdAt
-#                - published
-#                - {type: 'group', icon: 'th-list', label: 'Other Information', css_class: 'col-lg-5'}
-#                - category
-#                - tags
-#                - {type: 'group', icon: 'clip', label: 'Attachments', css_class: 'col-lg-5'}
-#                - { property: 'thumbnailFile', type: 'vich_image' }
             form:
                 fields:
                     - { property: 'backgroundFile', type: 'vich_image'}
-                    - title
-                    - text
-                    - buttonName
-                    - buttonUrl
-                    - isUsed
+                    - { property: 'title', label: 'Заголовок' }
+                    - { property: 'text', label: 'Текст' }
+                    - { property: 'buttonName', label: 'Назва кнопки' }
+                    - { property: 'buttonUrl', label: 'Url адреса' }
+                    - { property: 'isUsed', label: 'Використати' }
             list:
                 fields:
-                    - title
-                    - text
-                    - buttonName
-                    - buttonUrl
-                    - isUsed
-                    - { property: 'background', type: 'image', 'base_path': "uploads/slider", label: 'Photo' }
+                    - { property: 'title', label: 'Заголовок' }
+                    - { property: 'text', label: 'Текст' }
+                    - { property: 'buttonName', label: 'Назва кнопки' }
+                    - { property: 'buttonUrl', label: 'Url адреса' }
+                    - { property: 'isUsed', label: 'Використати' }
+                    - { property: 'background', type: 'image', 'base_path': "uploads/slider", label: 'Фото' }
                 sort: [ 'createdAt', 'ASC' ]
             edit:
                 fields:
                     - '-tags'
+        Catalog:
+            class: App\Entity\Catalog
+            form:
+                fields:
+#                    - { property: 'catalogFile', type: 'vich_image', type_options: { required: true }, label: 'Каталог'}
+                    - { property: 'catalogFile', type: 'vich_image', label: 'Каталог'}
+                    - { property: 'titleImageFile', type: 'vich_image', type_options: { required: true }, label: 'Титульна сторінка'}
+                    - { property: 'catalogDate', type: 'date', type_options: { format: 'd-M-y' }, label: 'Початок дії каталога' }
+            list:
+                fields:
+                    - { property: 'titleImage', type: 'image', 'base_path': "uploads/catalog", label: 'Титульна сторінка' }
+                    - { property: 'catalogDate', type: 'date', type_options: { format: 'd-M-y' }, label: 'Початок дії каталога' }
+                sort: [ 'createdAt', 'ASC' ]
+            edit:
+                fields:
+                    - { property: 'catalogDate', type: 'date', type_options: { format: 'd-M-y' }, label: 'Початок дії каталога' }

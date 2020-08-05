@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CatalogController!{% endblock %}
+
+{% block body %}
+    {% include 'navbar.html.twig' %}
+
+    <div class="container">
+
+        <div class="col-sm-12 d-flex justify-content-around">
+            <div class="catalog-item">
+                <a class="catalog" href="#" data-catalog="current">
+                    <div class="catalog-label">
+                        <h5>Актуальний каталог</h5>
+                    </div>
+                    {% if currentCatalog|length %}
+                        <div class="catalog-title"
+                             style="background-image:url('/uploads/catalog/{{ currentCatalog.titleImage }}')"
+                             data-pdf-src="/uploads/catalog/{{ currentCatalog.catalog }}">
+                        </div>
+                    {% else %}
+                        <div class="catalog-title"
+                             style="background-image:url('/images/question.png')"
+                             data-pdf-src="">
+                        </div>
+                    {% endif %}
+                </a>
+            </div>
+            <div class="catalog-item">
+                <a class="catalog" href="#" data-catalog="new">
+                    <div class="catalog-label">
+                        <h5>Новий каталог</h5>
+                    </div>
+                    {% if nextCatalog|length %}
+                        <div class="catalog-title"
+                             style="background-image:url('/uploads/catalog/{{ nextCatalog.titleImage }}')"
+                             data-pdf-src="/uploads/catalog/{{ nextCatalog.catalog }}">
+                        </div>
+                    {% else %}
+                        <div class="catalog-title"
+                             style="background-image:url('/images/question.png')"
+                             data-pdf-src="">
+                        </div>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-12 flipbook">
+            {% if currentCatalog|length %}
+                <div id="flipbook" class="ipgs-flipbook"
+                     data-pdf-src="/uploads/catalog/{{ currentCatalog.catalog }}"></div>
+            {% else %}
+                <div id="flipbook" class="not-found"></div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
