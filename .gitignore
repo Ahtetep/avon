@@ -18,6 +18,7 @@ uploads/*
 /public/bundles/
 /public/uploads/
 /var/
+/migrations/
 /vendor/
 /README.md
 /composer.lock
