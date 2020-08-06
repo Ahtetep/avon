@@ -595,3 +595,8 @@ select:-webkit-autofill:focus {
 .wrapper form input[type='text'] {
     background: none;
 }
+
+.map iframe {
+    width: 100%;
+    height: 30em;
+}

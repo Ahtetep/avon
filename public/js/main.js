@@ -1,7 +1,10 @@
 $(function () {
+// TODO: Slider on the home page
     $('.carousel').carousel({
         interval: 10000
     })
+
+// TODO: Pdf slider on the catalog page
     var options = {
         responsive:false,
 
@@ -12,7 +15,7 @@ $(function () {
         pdfDisableRangeRequests: false,
         pdfBookSizeFromDocument: false,
         preloadNeighbours: true,
-        pageStart: 1, // The number of the page to show first, after the book init
+        pageStart: 1,
         zoom:1,
         autoHeight: true,
         bookmarks: [
@@ -25,7 +28,7 @@ $(function () {
         ],
 
 
-        bookEnginePortrait: null, // Sets the book render mode for the portrait type of the book container
+        bookEnginePortrait: null,
         toolbarControls: [
             {type:'share',        active:false,  title:'share',                    icon:'ipgs-icon-share',        optional:false},
             {type:'outline',      active:false,  title:'toggle outline/bookmarks', icon:'ipgs-icon-outline',      optional:false},
@@ -50,7 +53,7 @@ $(function () {
             pageFade: true
         },
 
-        onLoad: null, // function(){} fire after the plugin was loaded
+        onLoad: null,
 
         txtFailedEngine: 'Can not find the book engine module specified',
         txtPDFLoading: 'Loading PDF document',
@@ -88,7 +91,16 @@ $(function () {
         $('#flipbook').ipages(options);
     });
 
+// TODO: Cancel js
     $(this).on('click', '.no-js-handle', function(e){
         e.preventDefault();
+    });
+
+// TODO: Smooth anchor
+    $('.navbar a').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 300);
+        return false;
     });
 })
